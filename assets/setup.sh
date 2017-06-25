@@ -8,7 +8,7 @@ trap "echo_red '******* Caught SIGINT signal. Stopping...'; exit 2" SIGINT
 deps () {  
   
     echo "Installing dependencies"  
-    yum -y install binutils compat-libstdc++-33 compat-libstdc++-33.i686 ksh elfutils-libelf elfutils-libelf-devel glibc glibc-common glibc-devel gcc gcc-c++ libaio libaio.i686 libaio-devel libaio-devel.i686 libgcc libstdc++ libstdc++.i686 libstdc++-devel libstdc++-devel.i686 make sysstat unixODBC unixODBC-devel  
+    yum -y install net-snmp net-snmp-utils binutils compat-libstdc++-33 compat-libstdc++-33.i686 ksh elfutils-libelf elfutils-libelf-devel glibc glibc-common glibc-devel glibc-devel.i686 gcc gcc-c++ libaio libaio.i686 libaio-devel libaio-devel.i686 libgcc libstdc++ libstdc++.i686 libstdc++-devel libstdc++-devel.i686 make sysstat unixODBC unixODBC-devel libXp.i686 libXp-devel.i686 libXt.i686 libXt-devel.i686 libXtst.i686 libXtst-devel.i686 gcc.x86_64 libgcc.i686
     yum clean all  
     rm -rf /var/lib/{cache,log} /var/log/lastlog  
   
@@ -26,7 +26,8 @@ users () {
     mkdir -p -m 755 /opt/oracle/app  
     mkdir -p -m 755 /opt/oracle/oraInventory  
     mkdir -p -m 755 /opt/oracle/dpdump  
-    chown -R oracle:oinstall /opt/oracle  
+    chown -R oracle:oinstall /opt/oracle 
+    
     cat /assets/profile >> ~oracle/.bash_profile  
     cat /assets/profile >> ~oracle/.bashrc  
   
@@ -41,4 +42,4 @@ sysctl_and_limits () {
   
 deps  
 users  
-sysctl_and_limits  
+sysctl_and_limits 

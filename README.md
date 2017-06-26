@@ -10,18 +10,18 @@ install目录下放oracle11g解压后的文件
 
 ├── assets
 │   ├── colorecho
-│   ├── dbca.rsp
-│   ├── db_install.rsp
-│   ├── entrypoint_oracle.sh
-│   ├── entrypoint.sh
-│   ├── install.sh
+│   ├── dbca.rsp   --数据库安装文件
+│   ├── db_install.rsp --数据库管理系统安装文件
+│   ├── entrypoint_oracle.sh --数据安装执行shell
+│   ├── entrypoint.sh  --cmd入口文件
+│   ├── install.sh  
 │   ├── limits.conf
 │   ├── profile
 │   ├── run_installer.sh
-│   ├── setup.sh
+│   ├── setup.sh  --数据库安装前准备环境
 │   ├── sysctl.conf
-|   └── netca.rsp 
-├── build.sh
-├── Dockerfile
-├── install
-└── run.sh
+|   └── netca.rsp  ---数据库监听安装文件
+├── build.sh  --创建o11g镜像
+├── Dockerfile docker 入口文件
+├── install  
+└── run.sh  ---创建11g容器
